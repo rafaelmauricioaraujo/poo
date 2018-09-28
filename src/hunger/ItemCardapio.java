@@ -2,15 +2,15 @@ package hunger;
 
 public class ItemCardapio {
 	
-	private TipoItem tipoItem;
+	private String tipo; 
 	private String nome;
 	private double valor;
 	
 	public void setTipo(String tipo) {
-		this.tipoItem = tipo;
+		this.tipo = tipo;
 	}
 	public String getTipo() {
-		return this.tipoItem;
+		return this.tipo;
 	}
 	
 	public void setNome(String nome) {
