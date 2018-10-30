@@ -18,7 +18,7 @@ public class Pedido {
 	}
 	
 	public void adiciona(ItemCardapio item) {
-		if(!this.pedidoAberto) {
+		if(this.pedidoAberto == false) {
 			System.out.println("Pedido Não Está Aberto");
 		}else {
 			this.itens.add(item);
@@ -26,8 +26,10 @@ public class Pedido {
 	}
 	
 	public void remove(ItemCardapio item) {
-		if(!this.pedidoAberto) {
+		if(this.pedidoAberto == false) {
 			System.out.println("Pedido Não Está Aberto");
+		}else if(item instanceof Bebida) {
+			((Bebida) item).setQtdEstoque(((Bebida) item).qtd);
 		}else {
 			this.itens.remove(item);
 		}
