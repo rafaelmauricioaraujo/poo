@@ -9,10 +9,12 @@ public class Pedido {
 	private boolean atendido;
 	private Date data; 
 	private List<ItemCardapio>itens = new ArrayList<>(); //<> diamond operator
+	private boolean pedidoAberto;
 	
 	public Pedido() {
 		this.data = new Date();
 		this.atendido = false;
+		this.pedidoAberto = true;
 	}
 	
 	public Pedido(ItemCardapio item) {
@@ -22,7 +24,11 @@ public class Pedido {
 	}
 	
 	public void adiciona(ItemCardapio item) {
-		this.itens.add(item);
+		if(this.pedidoAberto) {
+			this.itens.add(item);
+		}else {
+			System.out.println("Pedido Não Está Aberto");
+		}
 	}
 	
 	public int tamanho() {
@@ -40,5 +46,9 @@ public class Pedido {
 			valorTotal = valorTotal + aux.getValor();
 		}
 		return valorTotal;
+	}
+	public void setAtendido() {
+		this.atendido = true;
+		this.pedidoAberto = false;
 	}
 }

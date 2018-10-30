@@ -4,6 +4,7 @@ public class Entregador {
 
 	private String nome;
 	private String placaVeiculo;
+	private Pedido pedido;
 	
 	public Entregador() {
 		
@@ -20,5 +21,10 @@ public class Entregador {
 	}
 	public String getPlava() {
 		return this.placaVeiculo;
+	}
+	public void atendePedido(Pedido pedido) {
+		this.pedido = pedido;
+		pedido.setAtendido();
+		
 	}
 }
