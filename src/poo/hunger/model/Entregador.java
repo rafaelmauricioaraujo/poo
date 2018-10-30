@@ -19,12 +19,15 @@ public class Entregador {
 	public void setPlaca(String placaVeiculo) {
 		this.placaVeiculo = placaVeiculo;
 	}
-	public String getPlava() {
+	public String getPlaca() {
 		return this.placaVeiculo;
 	}
 	public void atendePedido(Pedido pedido) {
 		this.pedido = pedido;
-		pedido.fecharPedido();
-		pedido.setAtendido();
+		this.pedido.fecharPedido();
+		this.pedido.setAtendido();
+	}
+	public boolean pedidoFechado() {
+		return this.pedidoFechado();
 	}
 }

@@ -31,5 +31,14 @@ public class Main {
 		Cliente rafael = new Cliente("Rafael");
 		rafael.setPedido(pedido001);
 		System.out.println("Total do pedido do Rafael: " + rafael.getPedido().total());
+		
+		Entregador joao = new Entregador();
+		joao.setNome("João");
+		joao.setPlaca("HHH888");
+		
+		joao.atendePedido(pedido001);
+		
+		pedido001.remove(cocazero);
+		System.out.println("Estoque após devolução: " + cocazero.getQtdEstoque());
 	}
 }
