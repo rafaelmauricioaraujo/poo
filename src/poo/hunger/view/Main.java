@@ -1,10 +1,6 @@
 package poo.hunger.view;
 
-import poo.hunger.model.Bebida;
-import poo.hunger.model.ItemCardapio;
-import poo.hunger.model.Pedido;
-import poo.hunger.model.Refeicao;
-import poo.hunger.model.Sobremesa;
+import poo.hunger.model.*;
 
 public class Main {
 	
@@ -18,6 +14,8 @@ public class Main {
 		
 		Bebida suco = new Bebida("Suco", 12.00, 2);
 		System.out.println("estoque: " + suco.getQtdEstoque());
+		Bebida cocazero = new Bebida("Coca-Zero", 6.00, 2);
+		
 		
 		Pedido pedido001 = new Pedido();
 		pedido001.adiciona(lasanha);
@@ -28,9 +26,10 @@ public class Main {
 		
 		System.out.println(pedido001.tamanho());
 		System.out.println("TOTAL PEDIDO: " + pedido001.total());
-		System.out.println("Data: " + pedido001.getData());
+		System.out.println("estoque: " + cocazero.getQtdEstoque());
 		
-		
+		Cliente rafael = new Cliente("Rafael");
+		rafael.setPedido(pedido001);
+		System.out.println("Total do pedido do Rafael: " + rafael.getPedido().total());
 	}
-
 }

@@ -7,6 +7,7 @@ public class Cliente {
 	private String telefone;
 	private int referencia;
 	private boolean ativo;
+	private Pedido pedido;
 	
 	public Cliente() {
 		
@@ -36,4 +37,10 @@ public class Cliente {
 		return this.telefone;
 	}
 	
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
+	}
+	public Pedido getPedido() {
+		return this.pedido;
+	}
 }
