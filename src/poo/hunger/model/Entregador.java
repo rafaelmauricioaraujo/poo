@@ -24,7 +24,7 @@ public class Entregador {
 	}
 	public void atendePedido(Pedido pedido) {
 		this.pedido = pedido;
+		pedido.fecharPedido();
 		pedido.setAtendido();
-		
 	}
 }

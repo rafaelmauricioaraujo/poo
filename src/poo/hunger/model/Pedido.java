@@ -5,11 +5,11 @@ import java.util.Date;
 import java.util.List;
 
 public class Pedido {
-	
-	private boolean atendido;
-	private Date data; 
-	private List<ItemCardapio>itens = new ArrayList<>(); //<> diamond operator
+	 
+	private List<ItemCardapio>itens = new ArrayList<>();
+	private Date data;
 	private boolean pedidoAberto;
+	private boolean atendido;
 	
 	public Pedido() {
 		this.data = new Date();
@@ -17,17 +17,19 @@ public class Pedido {
 		this.pedidoAberto = true;
 	}
 	
-	public Pedido(ItemCardapio item) {
-		this.itens.add(item);
-		this.data = new Date();
-		this.atendido = false;
+	public void adiciona(ItemCardapio item) {
+		if(!this.pedidoAberto) {
+			System.out.println("Pedido Não Está Aberto");
+		}else {
+			this.itens.add(item);
+		}
 	}
 	
-	public void adiciona(ItemCardapio item) {
-		if(this.pedidoAberto) {
-			this.itens.add(item);
-		}else {
+	public void remove(ItemCardapio item) {
+		if(!this.pedidoAberto) {
 			System.out.println("Pedido Não Está Aberto");
+		}else {
+			this.itens.remove(item);
 		}
 	}
 	
@@ -49,6 +51,16 @@ public class Pedido {
 	}
 	public void setAtendido() {
 		this.atendido = true;
+	}
+	public boolean getAtendido() {
+		return this.atendido;
+	}
+	
+	public void fecharPedido() {
 		this.pedidoAberto = false;
+	}
+	
+	public boolean getPedidoAberto() {
+		return this.pedidoAberto;
 	}
 }
