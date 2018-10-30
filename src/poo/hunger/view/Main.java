@@ -20,6 +20,7 @@ public class Main {
 		pedido001.adiciona(pizza);
 		
 		System.out.println(pedido001.tamanho());
+		System.out.println("TOTAL PEDIDO: " + pedido001.total());
 	}
 
 }

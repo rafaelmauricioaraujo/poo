@@ -5,6 +5,10 @@ public class ItemCardapio {
 	private String nome;
 	private double valor;
 	
+	public ItemCardapio() {
+		
+	}
+	
 	public ItemCardapio(String nome, double valor) {
 		this.nome = nome;
 		this.valor = valor;
