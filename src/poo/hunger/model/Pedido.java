@@ -1,23 +1,23 @@
 package poo.hunger.model;
 
 import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class Pedido {
 	
 	private boolean atendido;
-	private Calendar data;
+	private Date data; 
 	private List<ItemCardapio>itens = new ArrayList<>(); //<> diamond operator
 	
 	public Pedido() {
-		this.data = Calendar.getInstance();
+		this.data = new Date();
 		this.atendido = false;
 	}
 	
 	public Pedido(ItemCardapio item) {
 		this.itens.add(item);
-		this.data = Calendar.getInstance();
+		this.data = new Date();
 		this.atendido = false;
 	}
 	
@@ -28,7 +28,7 @@ public class Pedido {
 	public int tamanho() {
 		return this.itens.size();
 	}
-	public Calendar getData() {
+	public Date getData() {
 		return this.data;
 	}
 	
