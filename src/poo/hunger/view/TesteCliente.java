@@ -1,4 +1,6 @@
-package poo.hunger.model;
+package poo.hunger.view;
+
+import poo.hunger.model.Cliente;
 
 public class TesteCliente {
 	
