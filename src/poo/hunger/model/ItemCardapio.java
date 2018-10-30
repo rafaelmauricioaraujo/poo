@@ -1,16 +1,13 @@
-package hunger;
+package poo.hunger.model;
 
 public class ItemCardapio {
 	
-	private Object tipo;
 	private String nome;
 	private double valor;
 	
-	public void setTipo(Object tipo) {
-		this.tipo = tipo;
-	}
-	public Object getTipo() {
-		return this.tipo;
+	public ItemCardapio(String nome, double valor) {
+		this.nome = nome;
+		this.valor = valor;
 	}
 	
 	public void setNome(String nome) {

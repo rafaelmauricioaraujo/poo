@@ -1,4 +1,4 @@
-package hunger;
+package poo.hunger.model;
 
 public class TesteCliente {
 	
