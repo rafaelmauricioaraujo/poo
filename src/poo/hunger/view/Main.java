@@ -77,11 +77,22 @@ public class Main {
 		
 		System.out.println(pedido002.getPgto());
 		
+		/*RELATÓRIOS*/
+		
 		RelatPedidosDoDia relatorio1 = new RelatPedidosDoDia();
 		relatorio1.adiciona(cliente01);
 		relatorio1.adiciona(cliente02);
 		
 		relatorio1.gera();
+		
+		RelatEntregadores relatorio2 = new RelatEntregadores();
+		relatorio2.adiciona(joao);
+		relatorio2.adiciona(pereira);
+		
+		relatorio2.gera();
+		
+		
+	
 				
 	}
 }
