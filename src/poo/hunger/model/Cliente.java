@@ -6,12 +6,10 @@ public class Cliente {
 	private String endereco;
 	private String telefone;
 	private int referencia;
-	private boolean ativo;
+	private boolean ativo = true;
 	private Pedido pedido;
-	
-	public Cliente() {
-		
-	}
+	private Cheque cheque;
+	private int inadiplencia = 0;
 	
 	public Cliente(String nome) {
 		this.nome = nome;
@@ -42,5 +40,29 @@ public class Cliente {
 	}
 	public Pedido getPedido() {
 		return this.pedido;
+	}
+	
+	public void associaCheque(Cheque cheque) {
+		this.cheque = cheque;
+	}
+	public void paga(Cheque cheque) {
+		double totalCheque = this.cheque.getValor();
+		double totalPedido = this.pedido.total();
+		if(totalCheque == totalPedido) {
+			this.pedido.setPgto();
+		}else {
+			this.pedido.cancela(pedido);
+			this.inadiplencia++;
+		}
+	}
+	public void desativarCliente() {
+		if(this.inadiplencia > 2) {
+			this.ativo = false;
+		}
+	}
+	
+	public void ativaCliente() {
+		this.inadiplencia = 0;
+		this.ativo = true;
 	}
 }

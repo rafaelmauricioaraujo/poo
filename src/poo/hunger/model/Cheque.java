@@ -5,6 +5,7 @@ public class Cheque {
 		private int conta;
 		private int agencia;
 		private int banco;
+		private double valor;
 		
 		public void setNumero(int numero) {
 			this.numero = numero;
@@ -36,5 +37,12 @@ public class Cheque {
 		
 		public int getBanco() {
 			return this.banco;
+		}
+		
+		public void setValor(double valor) {
+			this.valor = valor;
+		}
+		public double getValor() {
+			return this.valor;
 		}
 }

@@ -36,6 +36,14 @@ public class Pedido {
 		}
 	}
 	
+	public void cancela(Pedido pedido) {
+		ItemCardapio aux = new ItemCardapio();
+		for(int i = 0; i < this.itens.size(); i++) {
+			remove(aux);
+		}
+		this.itens.clear();
+	}
+	
 	public int tamanho() {
 		return this.itens.size();
 	}
