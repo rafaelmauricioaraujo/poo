@@ -6,10 +6,6 @@ public class Entregador {
 	private String placaVeiculo;
 	private Pedido pedido;
 	
-	public Entregador() {
-		
-	}
-	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}

@@ -33,6 +33,7 @@ public class Main {
 		System.out.println("Total do pedido do Rafael: " + rafael.getPedido().total());
 		
 		Entregador joao = new Entregador();
+		Entregador carlos = new Entregador();
 		joao.setNome("João");
 		joao.setPlaca("HHH888");
 		

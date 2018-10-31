@@ -61,8 +61,4 @@ public class Pedido {
 	public void fecharPedido() {
 		this.pedidoAberto = false;
 	}
-	
-	public boolean getPedidoAberto() {
-		return this.pedidoAberto;
-	}
 }
