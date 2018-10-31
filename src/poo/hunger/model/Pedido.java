@@ -79,4 +79,8 @@ public class Pedido {
 	public boolean getPgto() {
 		return this.pgto;
 	}
+	
+	public ItemCardapio pega(int i) { //método útil para geração de relatórios
+		return this.itens.get(i);
+	}
 }

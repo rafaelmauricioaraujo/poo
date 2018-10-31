@@ -23,6 +23,7 @@ public class Main {
 		pedido001.adiciona(coca);
 		pedido001.adiciona(milkshake);
 		
+		
 		System.out.println(pedido001.tamanho());
 		System.out.println("TOTAL PEDIDO: " + pedido001.total());
 		System.out.println("estoque: " + cocazero.getQtdEstoque());
@@ -91,8 +92,11 @@ public class Main {
 		
 		relatorio2.gera();
 		
+		RelatItensVendidos relatorio3 = new RelatItensVendidos();
+		relatorio3.adiciona(pedido001);
+		relatorio3.adiciona(pedido002);
 		
-	
+		relatorio3.gera();
 				
 	}
 }

@@ -23,24 +23,41 @@ public class RelatItensVendidos {
 	public void gera() {
 		Pedido pedidoAux = new Pedido();
 		ItemCardapio itemAux = new ItemCardapio();
-		System.out.println("Relatorio de Entregadores :");
+		System.out.println("Relatorio de Itens Vendidos :");
 		for(int i = 0; i <this.pedidos.size(); i++) {
 			
 			pedidoAux = this.pedidos.get(i);
-			for(int j = 0; i < pedidoAux.tamanho(); i++) {
+			
+			for(int j = 0; j < pedidoAux.tamanho(); j++) {
 				
+				itemAux = pedidoAux.pega(j);
+				if(itemAux instanceof Lanche) {
+					this.contadorLanche++;
+				}else if(itemAux instanceof Refeicao) {
+					this.contadorRefeicao++;
+				}else if(itemAux instanceof Bebida) {
+					this.contadorBebida++;
+				}else {
+					this.contadorSobremesa++;
+				}	
 			}
-				
-			
-			nome = aux.getNome();
-			qtdEntregas = aux.getEntregas();
-			total = aux.getPedido().total();
-			comissao = aux.calculaComissao();
-			
-			System.out.print(nome + " | " + qtdEntregas + " | " + total +  " | " + comissao);
-			System.out.println();
+		}
+		System.out.println("Número de itens Lanche : " + this.contadorLanche);
+		System.out.println("Número de itens Refeicao : " + this.contadorRefeicao);
+		System.out.println("Número de itens Bebida : " + this.contadorBebida);
+		System.out.println("Número de itens Sobremesa : " + this.contadorSobremesa);
+		
+		if(this.contadorLanche >= 5) {
+			System.out.println("Houve pico de procura de Lanche");
+		}
+		if(this.contadorRefeicao >= 5) {
+			System.out.println("Houve pico de procura de Refeicao");
+		}
+		if(this.contadorBebida >= 5) {
+			System.out.println("Houve pico de procura de Bebida");
+		}
+		if(this.contadorSobremesa >= 5) {
+			System.out.println("Houve pico de procura de Sobremesa");
 		}
 	}
-	}
-	
 }
