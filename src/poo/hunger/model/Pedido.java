@@ -10,6 +10,7 @@ public class Pedido {
 	private Date data;
 	private boolean pedidoAberto;
 	private boolean atendido;
+	private boolean pgto;
 	
 	public Pedido() {
 		this.data = new Date();
@@ -60,5 +61,13 @@ public class Pedido {
 	
 	public void fecharPedido() {
 		this.pedidoAberto = false;
+	}
+	
+	public void setPgto() {
+		this.pgto = true;
+	}
+	
+	public boolean getPgto() {
+		return this.pgto;
 	}
 }
