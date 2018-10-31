@@ -11,6 +11,7 @@ public class Pedido {
 	private boolean pedidoAberto;
 	private boolean atendido;
 	private boolean pgto;
+	private Cliente cliente;
 	
 	public Pedido() {
 		this.data = new Date();

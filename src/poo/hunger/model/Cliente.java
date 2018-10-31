@@ -11,11 +11,6 @@ public class Cliente {
 	private Cheque cheque;
 	private int inadiplencia = 0;
 	
-	public Cliente(String nome) {
-		this.nome = nome;
-		this.ativo = true;
-	}
-	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -36,7 +31,9 @@ public class Cliente {
 	}
 	
 	public void setPedido(Pedido pedido) {
-		this.pedido = pedido;
+		if(this.ativo) {
+			this.pedido = pedido;
+		}
 	}
 	public Pedido getPedido() {
 		return this.pedido;
@@ -46,16 +43,14 @@ public class Cliente {
 		this.cheque = cheque;
 	}
 	public void paga(Cheque cheque) {
-		double totalCheque = this.cheque.getValor();
-		double totalPedido = this.pedido.total();
-		if(totalCheque == totalPedido) {
+		if(this.cheque.getValor() == this.pedido.total()) {
 			this.pedido.setPgto();
 		}else {
 			this.pedido.cancela(pedido);
 			this.inadiplencia++;
 		}
 	}
-	public void desativarCliente() {
+	public void desativaCliente() {
 		if(this.inadiplencia > 2) {
 			this.ativo = false;
 		}
@@ -64,5 +59,9 @@ public class Cliente {
 	public void ativaCliente() {
 		this.inadiplencia = 0;
 		this.ativo = true;
+	}
+	
+	public boolean situacao() {
+		return this.ativo;
 	}
 }

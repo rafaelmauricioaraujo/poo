@@ -27,9 +27,11 @@ public class Main {
 		System.out.println("TOTAL PEDIDO: " + pedido001.total());
 		System.out.println("estoque: " + cocazero.getQtdEstoque());
 		
-		Cliente rafael = new Cliente("Rafael");
-		rafael.setPedido(pedido001);
-		System.out.println("Total do pedido do Rafael: " + rafael.getPedido().total());
+		Cliente cliente01 = new Cliente();
+		cliente01.setNome("Rafael");
+		cliente01.setTelefone("(85)98888-8888");
+		cliente01.setPedido(pedido001);
+		System.out.println("Total do pedido do Rafael: " + cliente01.getPedido().total());
 		
 		Entregador joao = new Entregador();
 		Entregador carlos = new Entregador();
@@ -52,14 +54,16 @@ public class Main {
 		pedido002.adiciona(cocacola);
 		pedido002.adiciona(chocolate);
 		
-		Cliente nathercia = new Cliente("Nathercia");
+		Cliente cliente02 = new Cliente();
+		cliente02.setNome("Nathercia");
+		cliente02.setTelefone("(85)99999-9999");
 		
 		Entregador pereira = new Entregador();
 		pereira.setNome("Pereira");
 		pereira.setPlaca("BBB456");
 		pereira.atendePedido(pedido002);
 		
-		nathercia.setPedido(pedido002);
+		cliente02.setPedido(pedido002);
 		
 		Cheque cheque1 = new Cheque();
 		cheque1.setAgencia(1234);
@@ -67,11 +71,17 @@ public class Main {
 		cheque1.setConta(1234);
 		cheque1.setNumero(1234);
 		cheque1.setValor(18.00);
-		nathercia.associaCheque(cheque1);
+		cliente02.associaCheque(cheque1);
 		
-		nathercia.paga(cheque1);
+		cliente02.paga(cheque1);
 		
 		System.out.println(pedido002.getPgto());
+		
+		RelatPedidosDoDia relatorio1 = new RelatPedidosDoDia();
+		relatorio1.adiciona(cliente01);
+		relatorio1.adiciona(cliente02);
+		
+		relatorio1.gera();
 				
 	}
 }
