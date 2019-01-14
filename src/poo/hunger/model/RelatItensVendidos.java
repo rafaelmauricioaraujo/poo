@@ -31,9 +31,7 @@ public class RelatItensVendidos {
 			for(int j = 0; j < pedidoAux.tamanho(); j++) {
 				
 				itemAux = pedidoAux.pega(j);
-				
-				
-			
+							
 				if(itemAux instanceof Lanche) {
 					this.contadorLanche = ((Lanche) itemAux).getNumero();
 					if(this.contadorLanche >= 5) {

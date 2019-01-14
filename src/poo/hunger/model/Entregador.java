@@ -33,9 +33,11 @@ public class Entregador {
 		return this.qtdEntregas;
 	}
 	
+	
 	public double calculaComissao() {
 		return this.comissao = 0.05*(this.pedido.total());
 	}
+	
 	/*
 	public boolean pedidoFechado() {
 		return this.pedidoFechado();

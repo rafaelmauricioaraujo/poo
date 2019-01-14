@@ -5,7 +5,7 @@ public class Cliente {
 	private String nome;
 	private String endereco;
 	private String telefone;
-	private int referencia;
+	//private int referencia;
 	private boolean ativo = true;
 	private Pedido pedido;
 	private Cheque cheque;
